@@ -7,6 +7,6 @@ namespace ElasticSearchDemoApp.Models
 {
     public class IDesignDetailModel
     {
-        public IList<IDesignModel> IDesignDetail { get; set; }
+        public List<IDesignModel> IDesign { get; set; }
     }
 }

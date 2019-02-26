@@ -9,28 +9,31 @@ namespace ElasticSearchDemoApp.Models
     public class FADSModel
     {
         // public IList<IDesignDetailModel> FADS { get; set; }
-        [Text(Name =("CreateDate"))]
+        [Text(Name ="CreateDate")]
         public DateTimeOffset CreateDate { get; set; }
 
-        [Text(Name =("Category"))]
+        [Text(Name ="Category")]
         public string Category { get; set; }
 
-        [Text(Name =("FieldDescription"))]
+        [Text(Name ="FieldDescription")]
         public string FieldDescription { get; set; }
 
-        [Text(Name =("Name"))]
+        [Text(Name ="Name")]
         public string Name { get; set; }
 
-        [Text(Name =("FadsScreenTitle"))]
+        [Text(Name ="FadsScreenTitle")]
         public string FadsScreenTitle { get; set; }
 
-        [Text(Name =("DosArea"))]
+        [Text(Name ="DosArea")]
         public long DosArea { get; set; }
 
-        [Text(Name =("DosScreen"))]
+        [Text(Name ="DosScreen")]
         public long DosScreen { get; set; }
 
-        [Text(Name =("ExternalField"))]
+        [Text(Name ="ExternalField")]
         public long ExternalField { get; set; }
+
+        [Text(Name = "IDesignDetail")]
+        public IDesignDetailModel IDesignDetail { get; set; }
     }
 }
