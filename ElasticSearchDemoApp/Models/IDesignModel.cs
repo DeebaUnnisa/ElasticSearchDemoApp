@@ -121,5 +121,11 @@ namespace ElasticSearchDemoApp.Models
 
         //[Text(Name = "AreaName")]
         //public string LineNumber { get; set; }
+
+
+        [Text(Name = "EFileDetail")]
+        public EFileDetailModel EFileDetail { get; set; }
+
+
     }
 }

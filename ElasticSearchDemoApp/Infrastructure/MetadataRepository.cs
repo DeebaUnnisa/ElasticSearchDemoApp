@@ -48,11 +48,18 @@ namespace ElasticSearchDemoApp.Infrastructure
             //    .Field(f=>f.Metadata1)
             //    .Query("Minnesota"))));
             // -------------------------------------------------
+            //var response = client.Search<Metadata>(s => s
+            //.Index("metadata1120")
+            //.Query(q => q
+            //.Match(m => m.Field("FADS.iDesignDetail.iDesign.ControlText").Query("Minnesota")
+            //    )));
+            //return response.Documents.ToList();
+            //--------------------------------------------------------------------
             var response = client.Search<Metadata>(s => s
-            .Index("metadata1120")
-            .Query(q => q
-            .Match(m => m.Field("FADS.iDesignDetail.iDesign.ControlText").Query("Minnesota")
-                )));
+              .Index("metadata1120")
+              .Query(q => q
+              .Match(m => m.Field("FADS.iDesignDetail.iDesign.eFileDetail.eFile.XPath").Query("a")
+                  )));
             return response.Documents.ToList();
         }
     }
