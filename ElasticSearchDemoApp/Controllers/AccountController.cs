@@ -25,7 +25,8 @@ namespace ElasticSearchDemoApp.Controllers
         public IList<Account> GetBanks([FromQuery]int from, [FromQuery]int size)
         {
             return _repository.Search();
-          //  return _repository.Search("bank", from, size);
+            //QueryRepository.LoadJson();
+            //  return _repository.Search("bank", from, size);
         }
     }
 }
