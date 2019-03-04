@@ -21,11 +21,21 @@ namespace ElasticSearchDemoApp.Controllers
             _repository = repository;
         }
 
+        //[HttpGet()]
+        //public IList<Account> GetBanks([FromQuery]int from, [FromQuery]int size)
+        //{
+        //    return _repository.Search();
+        //   QueryRepository.LoadJson();
+        //    //  return _repository.Search("bank", from, size);
+        //}
+
         [HttpGet()]
         public IList<Account> GetBanks([FromQuery]int from, [FromQuery]int size)
         {
+            QueryRepository.LoadJson();
+           
             return _repository.Search();
-            //QueryRepository.LoadJson();
+
             //  return _repository.Search("bank", from, size);
         }
     }
