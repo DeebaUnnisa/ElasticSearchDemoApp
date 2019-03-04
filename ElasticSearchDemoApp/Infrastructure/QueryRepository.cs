@@ -47,8 +47,8 @@ namespace ElasticSearchDemoApp.Infrastructure
             {
                // Console.WriteLine(kv.Key + ":" + kv.Value);
                 weights.Add(kv.Value);
-               // fields.Add(kv.Key + "^" + kv.Value);
-                fields.Add(kv.Key);
+                fields.Add(kv.Key + "^" + kv.Value);
+                //fields.Add(kv.Key);
                 // kv.Value = kv.Value / normalise_factor;
 
             }
@@ -67,15 +67,26 @@ namespace ElasticSearchDemoApp.Infrastructure
         {
             var client = _clientFactory.CreateClient();
             string simplified_search="Date";
-            
+
+            //var response = client.Search<Metadata>(s => s
+            //  .Index("metadata1120")
+            //  .Query(q => q
+            //  .Match(m => m.Field(LoadJson().First()).Query(simplified_search)
+            //      )));
+          //  Console.WriteLine(LoadJson().ToString());
+
             var response = client.Search<Metadata>(s => s
-              .Index("metadata1120")
-              .Query(q => q
-              .Match(m => m.Field(LoadJson().First()).Query(simplified_search)
-                  )));
-            Console.WriteLine(LoadJson().First());
+            .Index("metadata1120")
+            .Query(q => q
+            .Bool(b => b
+            .Must(m => m
+            .MultiMatch(mm => mm
+            .Query(simplified_search)
+            .Fields(LoadJson().ToArray())
+            )))));
             return response.Documents.ToList();
         }
 
     }
 }
+o
