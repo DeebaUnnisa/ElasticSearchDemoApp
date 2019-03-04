@@ -32,6 +32,7 @@ namespace ElasticSearchDemoApp
             services.AddSingleton<IMetadataRepository, MetadataRepository>();
             services.AddSingleton<ISearchRepository<Metadata>, SearchRepository<Metadata>>();
             services.AddSingleton<ISearchRepository<Account>, SearchRepository<Account>>();
+            services.AddSingleton<IQueryRepository,QueryRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(c =>
             {

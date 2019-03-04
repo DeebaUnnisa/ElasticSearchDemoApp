@@ -37,7 +37,7 @@ namespace ElasticSearchDemoApp.Infrastructure
             var root = JsonConvert.DeserializeObject<RootObject>(a);
             //string readResult = string.Empty;
             //string writeResult = string.Empty;
-            int normalise_factor = 10;
+            //int normalise_factor = 10;
             var fields = new List<string>();
             var  weights = new List<int>();
             // root.LeftText = root.LeftText / norm;
@@ -47,8 +47,9 @@ namespace ElasticSearchDemoApp.Infrastructure
             {
                // Console.WriteLine(kv.Key + ":" + kv.Value);
                 weights.Add(kv.Value);
-                fields.Add(kv.Key + "^" + kv.Value);
-               // kv.Value = kv.Value / normalise_factor;
+               // fields.Add(kv.Key + "^" + kv.Value);
+                fields.Add(kv.Key);
+                // kv.Value = kv.Value / normalise_factor;
 
             }
 
@@ -65,13 +66,14 @@ namespace ElasticSearchDemoApp.Infrastructure
         public IList<Metadata> SearchJson()
         {
             var client = _clientFactory.CreateClient();
-            string simplified_search="a";
+            string simplified_search="Date";
             
             var response = client.Search<Metadata>(s => s
               .Index("metadata1120")
               .Query(q => q
               .Match(m => m.Field(LoadJson().First()).Query(simplified_search)
                   )));
+            Console.WriteLine(LoadJson().First());
             return response.Documents.ToList();
         }
 
