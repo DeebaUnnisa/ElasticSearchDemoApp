@@ -34,7 +34,7 @@ namespace ElasticSearchDemoApp.Infrastructure
 
             string filepath = "config.json";
             var a = File.ReadAllText(@"Configuration\\" + filepath);
-            var root = JsonConvert.DeserializeObject<RootObject>(a);
+            var root = JsonConvert.DeserializeObject<JsonObject>(a);
             //string readResult = string.Empty;
             //string writeResult = string.Empty;
             //int normalise_factor = 10;
@@ -66,7 +66,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         public IList<Metadata> SearchJson()
         {
             var client = _clientFactory.CreateClient();
-            string simplified_search="Date";
+            string simplified_search="Minnesota";
 
             //var response = client.Search<Metadata>(s => s
             //  .Index("metadata1120")
@@ -89,4 +89,3 @@ namespace ElasticSearchDemoApp.Infrastructure
 
     }
 }
-o

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElasticSearchDemoApp.Models
 {
-    public class RootObject
+    public class JsonObject
     {
         [JsonProperty("FADS.iDesignDetail.iDesign.LeftText")]
         public int LeftText { get; set; }
