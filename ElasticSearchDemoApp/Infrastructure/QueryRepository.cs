@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using YamlDotNet.RepresentationModel;
 using Newtonsoft.Json.Linq;
 using ElasticSearchDemoApp.Models;
+using Nest;
 
 namespace ElasticSearchDemoApp.Infrastructure
 {
@@ -66,7 +67,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         public IList<Metadata> SearchJson()
         {
             var client = _clientFactory.CreateClient();
-            string simplified_search="contribution";
+            string simplified_search="overpayment prior year return";
 
             //var response = client.Search<Metadata>(s => s
             //  .Index("metadata1120")

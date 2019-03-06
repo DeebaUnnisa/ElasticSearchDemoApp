@@ -38,8 +38,8 @@ namespace ElasticSearchDemoApp.Models
         //[Text(Name = "AreaName")]
         //public string IDesignFieldType { get; set; }
 
-        //[Text(Name = "AreaName")]
-        //public string CtrlEORG { get; set; }
+        [Text(Name = "AreaName")]
+        public string CtrlEORG { get; set; }
 
         //[Text(Name = "AreaName")]
         //public string CtrlStroreValue { get; set; }
