@@ -67,7 +67,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         public IList<Metadata> SearchJson()
         {
             var client = _clientFactory.CreateClient();
-            string simplified_search="overpayment prior year return";
+            string simplified_search="total assets for the year";
 
             //var response = client.Search<Metadata>(s => s
             //  .Index("metadata1120")
