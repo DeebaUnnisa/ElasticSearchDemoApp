@@ -47,11 +47,11 @@ namespace ElasticSearchDemoApp.Models
         //[Text(Name = "AreaName")]
         //public string DefaultText { get; set; }
 
-        //[Text(Name = "AreaName")]
-        //public int WinArea { get; set; }
+        [Text(Name = "WinArea")]
+        public int WinArea { get; set; }
 
-        //[Text(Name = "AreaName")]
-        //public int WinScreen { get; set; }
+        [Text(Name = "WinScreen")]
+        public int WinScreen { get; set; }
 
         //[Text(Name = "AreaName")]
         //public int ObjectID { get; set; }
