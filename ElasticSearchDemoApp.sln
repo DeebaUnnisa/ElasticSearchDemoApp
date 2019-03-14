@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchDemoApp", "ElasticSearchDemoApp\ElasticSearchDemoApp.csproj", "{D370C113-6DE3-4967-A96D-DCC0273268C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticSearchDemoApp", "ElasticSearchDemoApp\ElasticSearchDemoApp.csproj", "{D370C113-6DE3-4967-A96D-DCC0273268C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenNlp.lib", "OpenNlp.lib\OpenNlp.lib.csproj", "{9A58440B-2914-4197-B5F5-2455E67C63B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D370C113-6DE3-4967-A96D-DCC0273268C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D370C113-6DE3-4967-A96D-DCC0273268C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D370C113-6DE3-4967-A96D-DCC0273268C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A58440B-2914-4197-B5F5-2455E67C63B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A58440B-2914-4197-B5F5-2455E67C63B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A58440B-2914-4197-B5F5-2455E67C63B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A58440B-2914-4197-B5F5-2455E67C63B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
