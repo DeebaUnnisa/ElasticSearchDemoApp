@@ -8,6 +8,6 @@ namespace ElasticSearchDemoApp.Infrastructure
 {
     public interface IQueryRepository
     {
-        IList<Metadata> SearchJson();
+        IList<Metadata> SearchJson(string q);
     }
 }

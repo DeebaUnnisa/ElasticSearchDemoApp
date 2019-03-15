@@ -34,10 +34,10 @@ namespace ElasticSearchDemoApp.Infrastructure
             }
             return fields;
         }
-        public IList<Metadata> SearchJson()
+        public IList<Metadata> SearchJson(string query)
         {
             var client = _clientFactory.CreateClient();
-            string simplified_search="total income";
+            string simplified_search=query;
 
             var response = client.Search<Metadata>(s => s
             .Index("metadata1120")
