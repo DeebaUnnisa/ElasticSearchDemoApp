@@ -34,7 +34,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         {
 
             string filepath = "config.json";
-            var a = File.ReadAllText(@"Configuration\\" + filepath);
+            var a = File.ReadAllText(@"./Configuration/" + filepath);
             var root = JsonConvert.DeserializeObject<JsonObject>(a);
             //string readResult = string.Empty;
             //string writeResult = string.Empty;
