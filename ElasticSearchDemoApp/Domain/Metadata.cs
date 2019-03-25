@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ElasticSearchDemoApp.Domain
 {
-    [ElasticsearchType(Name = "Meta_2017_1120_17-1F")]
+    [ElasticsearchType(Name = "Metadata")]
     public class Metadata
     {
         public List<FADSModel> FADS { get; set; }

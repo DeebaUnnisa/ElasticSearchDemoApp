@@ -18,10 +18,10 @@ namespace ElasticSearchDemoApp.Controllers
         {
             _repository = repository;
         }
-        [HttpGet()]
-        public IList<Metadata> GetJson()
+        [HttpGet("{query}")]
+        public IList<Metadata> GetJson(string query)
         {
-            return _repository.SearchJson();
+            return _repository.SearchJson(query);
         }
     }
 }
