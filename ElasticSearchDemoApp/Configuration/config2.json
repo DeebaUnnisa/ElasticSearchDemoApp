@@ -1,9 +1,9 @@
 {
-  "FADS.iDesignDetail.iDesign.LeftText": 70,
-  "FADS.iDesignDetail.iDesign.BottomText": 100,
-  "FADS.iDesignDetail.iDesign.ControlText": 60,
-  "FADS.iDesignDetail.iDesign.WinSubCategory": 20,
-  "FADS.iDesignDetail.iDesign.eFileDetail.eFile.XPath": 80,
-  "FADS.iDesignDetail.iDesign.AreaLongName": 50,
-  "FADS.iDesignDetail.iDesign.ScreenLongName":40
+  "FADS.iDesignDetail.iDesign.LeftText": 7,
+  "FADS.iDesignDetail.iDesign.BottomText": 10,
+  "FADS.iDesignDetail.iDesign.ControlText": 6,
+  "FADS.iDesignDetail.iDesign.WinSubCategory": 2,
+  "FADS.iDesignDetail.iDesign.eFileDetail.eFile.XPath": 8,
+  "FADS.iDesignDetail.iDesign.AreaLongName": 5,
+  "FADS.iDesignDetail.iDesign.ScreenLongName":4
 }

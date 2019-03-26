@@ -4,7 +4,6 @@ using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using YamlDotNet.RepresentationModel;
 using Newtonsoft.Json.Linq;
 using ElasticSearchDemoApp.Models;
 
@@ -22,7 +21,8 @@ namespace ElasticSearchDemoApp.Infrastructure
         {
 
             string filepath = "config.json";
-            var a = File.ReadAllText(@"Configuration\\" + filepath);
+            //var a = File.ReadAllText(@"Configuration\\" + filepath);
+            var a = File.ReadAllText(@"./Configuration/" + filepath);
             var root = JsonConvert.DeserializeObject<JsonObject>(a);
             var fields = new List<string>();
             var  weights = new List<int>();
