@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.NLP;
-using Core.NLP.Interfaces;
-using Core.NLP.TaxDomainInterpreter;
-using Core.NLP.TaxDomainInterpreter.Interfaces;
 using ElasticSearchDemoApp.Domain;
 using ElasticSearchDemoApp.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -40,8 +36,7 @@ namespace ElasticSearchDemoApp
                 c.SwaggerDoc("v1", new Info { Title = "ONESOURCE.AI", Version = "v1" });
             });
             //  services.AddSingleton<I>
-            services.AddSingleton<ICoreNlp>(new SfNlp(@"C:\dev\stanford-corenlp-full-2018-02-27"));
-            services.AddTransient<ITaxDomainInterpreter, TaxDomainInterpreter>();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
