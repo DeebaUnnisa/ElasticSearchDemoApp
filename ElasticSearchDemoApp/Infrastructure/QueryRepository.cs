@@ -1,5 +1,6 @@
 ﻿using ElasticSearchDemoApp.Domain;
 using System;
+using Nest;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +42,7 @@ namespace ElasticSearchDemoApp.Infrastructure
 
             var response = client.Search<Metadata>(s => s
             .Index("metadata1120")
+            .TypedKeys(true)
             .Query(q => q
             .Bool(b => b
             .Must(m => m
