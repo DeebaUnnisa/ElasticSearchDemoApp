@@ -11,7 +11,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         private readonly IElasticClient _client;
         public ElasticClientFactory()
         {
-            var settings = new ConnectionSettings(new Uri("http://localhost:9200")).DisableDirectStreaming();
+            var settings = new ConnectionSettings(new Uri("http://elasticsearch:9200"));
             _client = new ElasticClient(settings);
         }
 
