@@ -9,7 +9,7 @@ using ElasticSearchDemoApp.Infrastructure;
 using Core.NLP.TaxDomainInterpreter.Interfaces;
 using Core.NLP.Interfaces;
 using Core.NLP.Models;
-
+using StopWord;
 namespace ElasticSearchDemoApp.Controllers
 {
     [Route("api/[controller]")]
@@ -26,17 +26,44 @@ namespace ElasticSearchDemoApp.Controllers
         //{
         //    return _repository.SearchJson(query);
         //}
-        private readonly ICoreNlp _coreNlp;
-        private readonly ITaxDomainInterpreter _taxDomainInterpreter;
-        private readonly IQueryRepository _repository;
-        private readonly StopwordTool _stopwordTool;
+        //        private readonly ICoreNlp _coreNlp;
+        //        private readonly ITaxDomainInterpreter _taxDomainInterpreter;
+        //        private readonly IQueryRepository _repository;
+        //        private readonly StopwordTool _stopwordTool;
 
-        public SearchController(ICoreNlp coreNlp, ITaxDomainInterpreter taxDomainInterpreter, IQueryRepository repository, StopwordTool stopwordTool)
+        //        public SearchController(ICoreNlp coreNlp, ITaxDomainInterpreter taxDomainInterpreter, IQueryRepository repository, StopwordTool stopwordTool)
+        //        {
+        //            _coreNlp = coreNlp;
+        //            _taxDomainInterpreter = taxDomainInterpreter;
+        //            _repository = repository;
+        //            _stopwordTool = stopwordTool;
+        //        }
+        //        [HttpGet("{nlq}")]
+        //        public IList<Metadata> GetJson(string nlq)
+        //        {
+
+        //            ////pre processing
+        //            //nlq = _taxDomainInterpreter.PreprocessQuery(nlq);
+
+
+        //            //// core NLP parse
+        //            //NlpParsedResult result = _coreNlp.Parse(nlq);
+        //            string processedQuery = StopwordTool.RemoveStopwords(nlq);
+
+
+        //            return _repository.SearchJson(processedQuery);
+        //        }
+        //    }
+        //}
+
+       
+        private readonly IQueryRepository _repository;
+     
+        public SearchController(IQueryRepository repository)
         {
-            _coreNlp = coreNlp;
-            _taxDomainInterpreter = taxDomainInterpreter;
+           
             _repository = repository;
-            _stopwordTool = stopwordTool;
+           
         }
         [HttpGet("{nlq}")]
         public IList<Metadata> GetJson(string nlq)
@@ -48,7 +75,7 @@ namespace ElasticSearchDemoApp.Controllers
 
             //// core NLP parse
             //NlpParsedResult result = _coreNlp.Parse(nlq);
-            string processedQuery = StopwordTool.RemoveStopwords(nlq);
+            string processedQuery = nlq.RemoveStopWords("en");
 
 
             return _repository.SearchJson(processedQuery);

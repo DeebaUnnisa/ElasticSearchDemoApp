@@ -11,7 +11,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         private readonly IElasticClient _client;
         public ElasticClientFactory()
         {
-            var settings = new ConnectionSettings(new Uri("http://127.0.0.1:9200/"));
+            var settings = new ConnectionSettings(new Uri("http://localhost:9200/"));
             _client = new ElasticClient(settings);
         }
 
