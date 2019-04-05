@@ -31,6 +31,10 @@ namespace ElasticSearchDemoApp
             services.AddSingleton<IQueryRepository,QueryRepository>();
             services.AddSingleton<StopwordTool>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins", builder => { builder.AllowAnyOrigin().AllowAnyMethod(); });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "ONESOURCE.AI", Version = "v1" });
@@ -46,6 +50,9 @@ namespace ElasticSearchDemoApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(builder => builder.WithOrigins("*")
+                                            .AllowAnyHeader()
+                       );
             app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 

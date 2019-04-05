@@ -38,8 +38,8 @@ namespace ElasticSearchDemoApp.Models
         //[Text(Name = "AreaName")]
         //public string IDesignFieldType { get; set; }
 
-        //[Text(Name = "AreaName")]
-        //public string CtrlEORG { get; set; }
+        [Text(Name = "CtrlEORG")]
+        public string CtrlEORG { get; set; }
 
         //[Text(Name = "AreaName")]
         //public string CtrlStroreValue { get; set; }
@@ -53,8 +53,8 @@ namespace ElasticSearchDemoApp.Models
         [Text(Name = "WinScreen")]
         public int WinScreen { get; set; }
 
-        //[Text(Name = "AreaName")]
-        //public int ObjectID { get; set; }
+        [Text(Name = "ObjectID")]
+        public int ObjectID { get; set; }
 
         //[Text(Name = "AreaName")]
         //public int Levels { get; set; }

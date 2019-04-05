@@ -12,6 +12,7 @@ namespace ElasticSearchDemoApp.Infrastructure
         public ElasticClientFactory()
         {
             var settings = new ConnectionSettings(new Uri("http://elasticsearch:9200"));
+           // var settings = new ConnectionSettings(new Uri("http://localhost:9200"));
             _client = new ElasticClient(settings);
         }
 
